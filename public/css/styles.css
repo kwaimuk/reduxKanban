@@ -1,0 +1,41 @@
+body {
+  background: OldLace;
+  font-family: 'Open Sans', sans-serif; }
+
+#board {
+  display: flex;
+  background-color: Wheat;
+  height: 80vh; }
+
+.queue {
+  border: 1px solid #000000;
+  width: 30vw; }
+
+.progress {
+  border: 1px solid #000000;
+  width: 30vw; }
+
+.done {
+  border: 1px solid #000000;
+  width: 30vw; }
+
+.card {
+  border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+  box-shadow: -1px 10px 18px -4px rgba(0, 0, 0, 0.75);
+  background-color: azure;
+  width: 20vw;
+  padding: 10px;
+  margin: auto; }
+
+.card.low {
+  background-color: lightsalmon; }
+
+.card.medium {
+  background-color: palegreen; }
+
+.card.high {
+  background-color: pink; }
+
+.card.blocker {
+  background-color: yellow; }
