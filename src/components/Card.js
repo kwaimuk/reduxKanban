@@ -12,9 +12,6 @@ class Card extends Component {
   handleClick(props) {
     var newData = Object.assign({}, props);
 
-
-
-         console.log("original",newData);
     switch (newData.status) {
       case "Queue":
         newData.status = "In Progress";
@@ -31,6 +28,7 @@ class Card extends Component {
     }
 
 
+         console.log("original",newData);
   }
 
   updateCard(props){
@@ -47,12 +45,18 @@ class Card extends Component {
   }
 
 //prevents refresh
-  handleSubmit(event) {
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  //   this.updateCard();
+  // }
+
+  handleSubmit = (event) => {
     event.preventDefault();
-    this.updateCard();
+
+    this.props.editCard(this.state);
+
+    this.setState({ title : '', createdBy : '', assignedTo : '' });
   }
-
-
 
 
 
@@ -64,7 +68,7 @@ class Card extends Component {
     <br />
     <p>Task: { this.props.title } </p>
     <div>Priority:  { this.props.priority }</div>
-    <div onClick={() =>this.handleClick(this.props)} >Status: { this.props.status }</div>
+    <div onClick={() =>this.handleClick(this.props)} >Status: {this.props.status }</div>
     <div>Created By:  { this.props.createdBy }</div>
     <div>Assigned To:  { this.props.assignedTo }</div>
           <button type="submit">Update Card</button>
